@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">OmniText</string>
+
+    <string name="toggle">Enable Omni</string>
+
+    <string name="sample_text">"
+Generic data:
+Phone: +15417543010
+Number: 152.43
+
+Credit cards:
+Mastercard: 5555555555554444
+Invalid Mastercard: 5555555555555555
+Visa: 4012888888881881
+American Express: 371449635398431
+Diners Club: 30569309025904
+Discover: 6011000990139424
+JCB: 3566002020360505
+
+Custom Omni text:
+{omni}Hello Omni!{/omni}
+    "</string>
+</resources>
