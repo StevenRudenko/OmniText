@@ -10,8 +10,54 @@ Highlights various information (like credit cards, phone numbers, number values)
 
 ## Installation
 
-```groovy
-TBD
+1. Put Github username and [token](https://github.com/settings/tokens) with `read:packages` scope into `local.properties` file:
+
+  ```properties
+  gpr.user=<github username>
+  gpr.key=<token>
+  ```
+
+2. Add Github Maven repository to the root `build.gradle` script:
+
+  ```groovy
+  Properties properties = new Properties()
+  properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+  allprojects {
+      repositories {
+          ...
+          maven {
+              url "https://maven.pkg.github.com/StevenRudenko/OmniText"
+              credentials {
+                  username properties.getProperty("gpr.user")
+                  password properties.getProperty("gpr.key")
+              }
+          }
+      }
+  }
+  ```
+
+3. Add dependency to app `build.gradle`
+
+  ```groovy
+  implementation "com.github.stevenrudenko:omnitext:1.0.0"
+  ```
+
+## Usage
+Include the `OmniTextView` into layout and use it as standard `TextView`:
+```xml
+<com.github.stevenrudenko.omnitext.OmniTextView
+    android:id="@+id/omniText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+```
+
+To subscribe for an omni-actions, add next tines into `Activity` or `Fragment` code:
+```kotlin
+val omniText = view.findViewById<OmniTextView>(R.id.omniText)
+omniText.onOmniAction = { omni ->
+    // use omni data here
+}
 ```
 
 ## Features
