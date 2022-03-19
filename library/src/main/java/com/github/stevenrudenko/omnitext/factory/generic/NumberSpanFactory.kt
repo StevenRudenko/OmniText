@@ -11,6 +11,7 @@ class NumberSpanFactory(
 ): BaseSpanFactory() {
     override val searchPattern: Pattern
         get() = Pattern.compile("(\\d*\\.)?\\d+")
+    override val validatePattern: Pattern = searchPattern
 
     override fun buildOf(text: CharSequence, start: Int, end: Int): OmniSpan {
         val part = text.subSequence(start, end).toString()

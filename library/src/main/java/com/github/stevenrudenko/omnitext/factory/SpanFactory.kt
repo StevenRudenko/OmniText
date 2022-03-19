@@ -7,7 +7,7 @@ interface SpanFactory {
 
     fun search(text: CharSequence): Array<OmniSpan>
 
-    fun buildOf(text: CharSequence, start: Int, end: Int): OmniSpan
+    fun buildOf(text: CharSequence, start: Int, end: Int): OmniSpan?
 
     fun validate(text: CharSequence): Boolean
 

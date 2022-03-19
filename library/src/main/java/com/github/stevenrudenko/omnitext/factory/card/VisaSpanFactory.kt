@@ -9,15 +9,12 @@ import java.util.regex.Pattern
 open class VisaSpanFactory : CardSpanFactory() {
     override val type: Int
         get() = TYPE_VISA
-    override val searchPattern: Pattern
+    override val validatePattern: Pattern
         get() = PATTERN
-
-    override fun buildOf(text: CharSequence, start: Int, end: Int): OmniSpan {
-        val result = super.buildOf(text, start, end)
-        return result.copy(
-            icon = if (result.valid) R.drawable.omni_card_visa_valid else R.drawable.omni_card_visa_invalid
-        )
-    }
+    override val validIconId: Int
+        get() = R.drawable.omni_card_visa_valid
+    override val invalidIconId: Int
+        get() = R.drawable.omni_card_visa_invalid
 
     companion object {
         private var PATTERN = Pattern.compile("(?:4[0-9]{12}(?:[0-9]{3}))")

@@ -8,7 +8,7 @@ plugins {
 
 val versionMajor = 1
 val versionMinor = 0
-val versionPatch = 1
+val versionPatch = 2
 
 val artifactVersionCode = versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100
 val artifactVersionName = "$versionMajor.$versionMinor.$versionPatch"
@@ -18,14 +18,12 @@ val releaseArtifactGroupId = "com.github.stevenrudenko"
 val releaseArtifactPath = "$buildDir/outputs/aar/${project.name}-release.aar"
 
 android {
-    compileSdkVersion(30)
-    buildToolsVersion = "30.0.2"
+    compileSdkVersion(32)
+    buildToolsVersion = "32.0.0"
 
     defaultConfig {
         minSdkVersion(21)
-        targetSdkVersion(30)
-        versionCode = 2
-        versionName = "1.0.1"
+        targetSdkVersion(32)
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -44,17 +42,17 @@ android {
 dependencies {
     implementation(kotlin("stdlib", KotlinCompilerVersion.VERSION))
 
-    implementation("androidx.core:core-ktx:1.3.2")
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("com.google.android.material:material:1.2.1")
+    implementation("androidx.core:core-ktx:1.7.0")
+    implementation("androidx.appcompat:appcompat:1.4.1")
+    implementation("com.google.android.material:material:1.5.0")
 
     implementation("com.googlecode.libphonenumber:libphonenumber:8.12.12")
 
     testImplementation("junit:junit:4.+")
     testImplementation("org.mockito:mockito-core:3.3.3")
 
-    androidTestImplementation("androidx.test.ext:junit:1.1.2")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+    androidTestImplementation("androidx.test.ext:junit:1.1.3")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 }
 
 publishing {
