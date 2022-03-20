@@ -7,8 +7,8 @@ plugins {
 }
 
 val versionMajor = 1
-val versionMinor = 0
-val versionPatch = 2
+val versionMinor = 1
+val versionPatch = 0
 
 val artifactVersionCode = versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100
 val artifactVersionName = "$versionMajor.$versionMinor.$versionPatch"
@@ -18,12 +18,12 @@ val releaseArtifactGroupId = "com.github.stevenrudenko"
 val releaseArtifactPath = "$buildDir/outputs/aar/${project.name}-release.aar"
 
 android {
-    compileSdk =31
+    compileSdk = 31
     buildToolsVersion = "31.0.0"
 
     defaultConfig {
         minSdk = 21
-        targetSdk =31
+        targetSdk = 31
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")

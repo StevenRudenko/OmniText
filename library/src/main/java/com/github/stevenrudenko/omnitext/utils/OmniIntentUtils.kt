@@ -22,8 +22,7 @@ object OmniIntentUtils {
                     flags = Intent.FLAG_ACTIVITY_NEW_TASK
                 }
             }
-            TYPE_EMAIL -> Intent(Intent.ACTION_SEND).apply {
-                putExtra(Intent.EXTRA_EMAIL, omni.text)
+            TYPE_EMAIL -> Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:${omni.text}")).apply {
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK
             }
             TYPE_PHONE -> Intent(Intent.ACTION_DIAL, Uri.parse("tel:${omni.text}"))

@@ -1,7 +1,6 @@
 package com.github.stevenrudenko.omnitext.sample
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         textView.onOmniAction = { omni ->
             Toast.makeText(applicationContext, omni.text, Toast.LENGTH_SHORT).show()
             OmniIntentUtils.createIntent(omni)?.let { intent ->
-                Log.d("omni", "$intent")
                 if (intent.resolveActivity(packageManager) != null) {
                     startActivity(intent)
                 }
