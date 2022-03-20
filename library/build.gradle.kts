@@ -18,12 +18,12 @@ val releaseArtifactGroupId = "com.github.stevenrudenko"
 val releaseArtifactPath = "$buildDir/outputs/aar/${project.name}-release.aar"
 
 android {
-    compileSdkVersion(32)
-    buildToolsVersion = "32.0.0"
+    compileSdk =31
+    buildToolsVersion = "31.0.0"
 
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(32)
+        minSdk = 21
+        targetSdk =31
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")

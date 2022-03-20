@@ -6,13 +6,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion(32)
-    buildToolsVersion = "32.0.0"
+    compileSdk = 31
+    buildToolsVersion = "31.0.0"
 
     defaultConfig {
         applicationId = "com.github.stevenrudenko.omnitext.sample"
-        minSdkVersion(21)
-        targetSdkVersion(32)
+        minSdk = 21
+        targetSdk = 31
         versionCode = 1
         versionName = "1.0"
     }

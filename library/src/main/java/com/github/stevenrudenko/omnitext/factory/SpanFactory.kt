@@ -17,13 +17,15 @@ interface SpanFactory {
 
     companion object {
         const val TYPE_TEXT = 1
-        const val TYPE_PHONE = 2
-        const val TYPE_VISA = 3
-        const val TYPE_MASTERCARD = 4
-        const val TYPE_AM_EXPRESS = 5
-        const val TYPE_DINERS_CLUB = 6
-        const val TYPE_DISCOVERY = 7
-        const val TYPE_JCB = 8
+        const val TYPE_EMAIL = 2
+        const val TYPE_URL = 3
+        const val TYPE_PHONE = 4
+        const val TYPE_VISA = 21
+        const val TYPE_MASTERCARD = 22
+        const val TYPE_AM_EXPRESS = 23
+        const val TYPE_DINERS_CLUB = 24
+        const val TYPE_DISCOVERY = 25
+        const val TYPE_JCB = 26
         const val TYPE_NUMBER = Int.MAX_VALUE
     }
 }

@@ -7,9 +7,7 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 import com.github.stevenrudenko.omnitext.factory.*
 import com.github.stevenrudenko.omnitext.factory.card.*
-import com.github.stevenrudenko.omnitext.factory.generic.NumberSpanFactory
-import com.github.stevenrudenko.omnitext.factory.generic.PhoneSpanFactory
-import com.github.stevenrudenko.omnitext.factory.generic.TextSpanFactory
+import com.github.stevenrudenko.omnitext.factory.generic.*
 
 /** Text view with omni action implementation, */
 open class OmniTextView @JvmOverloads constructor(
@@ -36,6 +34,8 @@ open class OmniTextView @JvmOverloads constructor(
     init {
         factory = createSpanFactory(
             TextSpanFactory(),
+            EmailSpanFactory(),
+            UrlSpanFactory(),
             NumberSpanFactory(),
             PhoneSpanFactory(context),
             AmericanExpressSpanFactory(),
